@@ -22,7 +22,7 @@ class Program
             Console.WriteLine("2. Play the next song in your playlist");
             Console.WriteLine("3. Skip the next song");
             Console.WriteLine("4. Rewind one song");
-            if (showExitOption) // Display the Exit option based on the showExitOption variable
+            if (showExitOption) 
             {
                 Console.WriteLine("5. Exit");
             }
