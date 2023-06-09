@@ -6,9 +6,6 @@
 using System;
 using System.Collections.Generic;
 
-
-
-
 Queue<string> playlist = new Queue<string>();
 string nextSong = "";
 bool showExitOption = true;
@@ -33,12 +30,12 @@ while (!exit)
         Console.WriteLine("Enter Song Name:");
         string songName = Console.ReadLine();
         playlist.Enqueue(songName);
-        Console.WriteLine($"\"{songName}\" added to your playlist.");
+        Console.WriteLine($"'{songName}' added to your playlist.");
         if (nextSong == "")
         {
             nextSong = songName;
         }
-        Console.WriteLine($"Next song: \"{nextSong}\"");
+        Console.WriteLine($"Next song: '{nextSong}'");
         showExitOption = false;
     }
     else if (option == 2)
@@ -46,12 +43,12 @@ while (!exit)
         if (playlist.Count > 0)
         {
             string currentSong = playlist.Dequeue();
-            Console.WriteLine($"Now playing \"{currentSong}\"");
+            Console.WriteLine($"Now playing '{currentSong}'");
             showExitOption = false;
             if (playlist.Count > 0)
             {
                 nextSong = playlist.Peek();
-                Console.WriteLine($"Next song: \"{nextSong}\"");
+                Console.WriteLine($"Next song: '{nextSong}'");
             }
             else
             {
@@ -74,7 +71,7 @@ while (!exit)
             if (playlist.Count > 0)
             {
                 nextSong = playlist.Peek();
-                Console.WriteLine($"Next song: \"{nextSong}\"");
+                Console.WriteLine($"Next song: '{nextSong}'");
             }
             else
             {
@@ -92,18 +89,19 @@ while (!exit)
         if (playlist.Count > 0)
         {
             string currentSong = playlist.Dequeue();
-            Console.WriteLine($"Rewound to the previous song: \"{currentSong}\"");
+            Console.WriteLine($"Rewind to the previous song: '{currentSong}'");
             playlist.Enqueue(currentSong);
             showExitOption = false;
             if (playlist.Count > 0)
             {
                 nextSong = playlist.Peek();
-                Console.WriteLine($"Next song: \"{nextSong}\"");
+                Console.WriteLine($"Next song: '{nextSong}'");
             }
             else
             {
                 Console.WriteLine("Next song: none queued");
                 nextSong = "";
+
             }
         }
         else
@@ -118,6 +116,7 @@ while (!exit)
     else
     {
         Console.WriteLine("Invalid option. Please try again.");
+        showExitOption = true;
     }
 
     Console.WriteLine();
